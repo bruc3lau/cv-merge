@@ -52,7 +52,7 @@ red_edges = medianCanny(red, 0, 1)
 edges = blue_edges | green_edges | red_edges
 
 # I'm using OpenCV 3.4. This returns (contours, hierarchy) in OpenCV 2 and 4
-_, contours, hierarchy = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+contours, hierarchy = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
 # go through the contours and save the box edges
 boxes = []  # each element is [[top-left], [bottom-right]]
